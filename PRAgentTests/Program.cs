@@ -2,7 +2,7 @@
 
 using PRAgentTests;
 
-new TestDependency("""
+string testStr = """
 		In Project Mayhem, we have no name.
 		But in death, we do.
 
@@ -19,4 +19,14 @@ new TestDependency("""
 		His name is Robert Paulson.
 		His name is Robert Paulson.
 		His name is Robert Paulson.
-		""").WriteThisString();
+		""";
+
+
+List<ITestStuff> stuff =
+[
+	new TestDependency(testStr),
+	new AnotherTestDependency(testStr)
+];
+
+
+stuff.ForEach(thing => thing.WriteThisString());
