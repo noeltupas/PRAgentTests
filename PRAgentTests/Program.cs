@@ -1,17 +1,32 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-string test = """
-	In Project Mayhem, we have no name.
-	But in death, we do.
+using PRAgentTests;
 
-	His name, is Robert Paulson.
+string testStr = """
+		In Project Mayhem, we have no name.
+		But in death, we do.
 
-	His name is Robert Paulson.
-	His name is Robert Paulson.
-	His name is Robert Paulson.
-	His name is Robert Paulson.
-	His name is Robert Paulson.
-	His name is Robert Paulson.
-	""";
+		His name, is Robert Paulson.
 
-Console.WriteLine(test);
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		His name is Robert Paulson.
+		""";
+
+
+List<ITestStuff> stuff =
+[
+	new TestDependency(testStr),
+	new AnotherTestDependency(testStr)
+];
+
+
+stuff.ForEach(thing => thing.WriteThisString());
